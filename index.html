@@ -15,11 +15,11 @@
 <body>
 
     <!--Headings-->
-    <a href="/" id="logo"><i class="fa-solid fa-headphones-simple"></i> Audiophile database</a>
+    <a href="/" id="logo"><i class="fa-solid fa-headphones-simple"></i> Artist Manager</a>
     <h1 class="heading">Search for an artist</h1>
-    <p class="intro-text">Welcome to the audophile databse where you can search for a artist to get information on their top songs and how popular it is</p>
-    <p class="intro-text">This application provides a quicky and easy to get information on an artist</p>
-    <p class="intro-text"></p>
+    <p class="intro-text_1">Welcome to the audophile database where you can search for a artist to get information on their top songs and how popular it is</p>
+    <p class="intro-text_2">This application provides a quicky and easy way to get information on an artist</p>
+   
 
     <form action="/" method="POST">
         <label for="artist_name">Enter Artist Name:</label>
@@ -27,8 +27,11 @@
         <button type="submit" class="submit_button">Search</button>
     </form>
 
-    {% if error %}
-        <p style="color: red;">{{ error }}</p>
-    {% endif %}
+
+
+    <img src="static/images/collage_album_cover.jpg" alt="A simple image" class="collage_1">
+    <img src="static/images/collage_album_cover_1.jpg" alt="A simple image" class="collage">
+
+
 </body>
 </html>

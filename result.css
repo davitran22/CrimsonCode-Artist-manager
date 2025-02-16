@@ -1,0 +1,25 @@
+/*For result.html page*/
+
+body
+{
+    background-color: lightcoral;
+}
+
+.heading
+{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 25px;
+}
+
+.search
+{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font: black;
+    font-weight: bold;
+}
+
+.artist_name
+{
+    
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}

@@ -1,17 +1,36 @@
-/* For results.html */
+/* For results.html file */
+
+body
+{
+    background-color: lightcyan;
+}
 
 .heading /*Search for an artist*/
 {
     font-family: bold;
 }
 
-label /* Enter artist name*/
+
+
+.intro-text_1
 {
-    
-    
-    margin: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 16px;
 }
 
+.intro-text_2
+{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+
+label
+{
+    
+    font-weight: bolder;
+}
 
 .submit_button /* search button */
 {
@@ -23,7 +42,7 @@ label /* Enter artist name*/
 
 #logo
 {
-    font-size: 30px;
+    font-size: 38px;
     font-weight: bold;
     color: green;
     text-align: center;
@@ -31,3 +50,38 @@ label /* Enter artist name*/
     text-decoration: none;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
+.submit_button
+{
+    background-color: #1DB954; /* Spotify green */
+    color: black; /* White text */
+    border: none;
+    border-radius: 50px; /* Rounded corners */
+    padding: 10px 20px; /* Padding */
+    font-size: 12px; /* Font size */
+    font-weight: bold; /* Bold text */
+    cursor: pointer; /* Pointer cursor on hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.submit_button:hover
+{
+
+    background-color: green;
+    
+}
+
+.collage
+{
+    width: 670px;
+    height: 441px; /* This maintains the aspect ratio */
+}
+
+.collage_1
+{
+    width: 557px;
+    height: auto; /* This maintains the aspect ratio */
+}
+
+
