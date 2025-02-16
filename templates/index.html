@@ -1,0 +1,37 @@
+
+<!--Main page-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Artist Search</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}"> <!--link css file-->
+    <script src="https://kit.fontawesome.com/9aa36e934b.js" crossorigin="anonymous"></script>
+    
+
+</head>
+
+<body>
+
+    <!--Headings-->
+    <a href="/" id="logo"><i class="fa-solid fa-headphones-simple"></i> Artist Manager</a>
+    <h1 class="heading">Search for an artist</h1>
+    <p class="intro-text_1">Welcome to the audophile database where you can search for a artist to get information on their top songs and how popular it is</p>
+    <p class="intro-text_2">This application provides a quicky and easy way to get information on an artist</p>
+   
+
+    <form action="/" method="POST">
+        <label for="artist_name">Enter Artist Name:</label>
+        <input type="text" id="artist_name" name="artist_name" required>
+        <button type="submit" class="submit_button">Search</button>
+    </form>
+
+
+
+    <img src="static/images/collage_album_cover.jpg" alt="A simple image" class="collage_1">
+    <img src="static/images/collage_album_cover_1.jpg" alt="A simple image" class="collage">
+
+
+</body>
+</html>
