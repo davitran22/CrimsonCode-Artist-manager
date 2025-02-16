@@ -5,45 +5,45 @@ import base64
 from requests import post, get
 import requests
 
-load_dotenv()
+load_dotenv() # loads the .env file
 
-client_id = os.getenv("CLIENT_ID")
-client_secret = os.getenv("CLIENT_SECRET")
+client_id = os.getenv("CLIENT_ID") # gets the client id from the .env file
+client_secret = os.getenv("CLIENT_SECRET") # gets the client secret from the .env file
 top_song_dict = {}
 
-#print(client_id, client_secret)
+#print(client_id, client_secret) # prints out the client id and client secret test
 
 
 def get_token():
 
-    auth_string = client_id + ":" + client_secret
-    auth_bytes = auth_string.encode('utf-8')
-    auth_base64 = str(base64.b64encode(auth_bytes), 'utf-8')
-    url = "https://accounts.spotify.com/api/token"
+    auth_string = client_id + ":" + client_secret # combines the client id and client secret
+    auth_bytes = auth_string.encode('utf-8') # encodes the auth string to utf-8
+    auth_base64 = str(base64.b64encode(auth_bytes), 'utf-8') #encodes the auth string to base64
+    url = "https://accounts.spotify.com/api/token" # url to get the token this sends a post request to the url
     headers = {
         "authorization": "Basic " + auth_base64,
         "content-type": "application/x-www-form-urlencoded"
     }
-    data = {"grant_type": "client_credentials"}
+    data = {"grant_type": "client_credentials"} # data to send to the url
     result = post(url, headers=headers, data=data)
-    json_result = json.loads(result.content)
-    token = json_result["access_token"]
+    json_result = json.loads(result.content) # loads the result into a json format
+    token = json_result["access_token"] # parses the token from the json result
     return token
 # gets the token from the API
-def get_auth_header(token):
+def get_auth_header(token): 
     return {"Authorization": "Bearer " + token}
 
 # searches for the artist
 def search_for_artist(token, artist_name):
     url = "https://api.spotify.com/v1/search"
     headers = get_auth_header(token)
-    params = {
+    params = { # parameters to send to the url to search for the artist (gives 1 artist)
         "q": artist_name,
         "type": "artist",
         "limit": 1
     }
    
-    result = requests.get(url, headers=headers, params=params)
+    result = requests.get(url, headers=headers, params=params) # sends a get request to the url (token and parameters)
     # if the status code is not 200, then there is an error
     if result.status_code != 200:
         print(f"Error: {result.status_code}: {result.text}")
@@ -55,9 +55,14 @@ def search_for_artist(token, artist_name):
         return None
     return json_result[0]
     
+    # for all the function below they get a stat from the url
+    # get the header from the token
+    # get the result from the url
+    # load the result into a json format
+    
     # gets the top songs of the artist
 def get_top_songs_by_artist(token, artist_id):
-    url = f"https://api.spotify.com/v1/artists/{artist_id}/top-tracks?country=US"
+    url = f"https://api.spotify.com/v1/artists/{artist_id}/top-tracks?country=US" # url to get the top tracks of the artist
     
     headers = get_auth_header(token)
     result = requests.get(url, headers=headers)
@@ -69,7 +74,7 @@ def get_top_songs_by_artist(token, artist_id):
 def get_albums_by_artist(token, artist_id):
     
     url = f"https://api.spotify.com/v1/artists/{artist_id}/albums?country=US"
-    headers = get_auth_header(token)
+    headers = get_auth_header(token) 
     result = requests.get(url, headers=headers)
     json_result = json.loads(result.content)
 
@@ -78,7 +83,7 @@ def get_albums_by_artist(token, artist_id):
         print(f"{idx + 1}. {album['name']} ({album['release_date']})") 
     return json_result
 
- 
+ # gets the profile picture of the artist page
 def get_artist_profile_picture(token, artist_id):
     url = f"https://api.spotify.com/v1/artists/{artist_id}"
     headers = get_auth_header(token)
@@ -86,7 +91,7 @@ def get_artist_profile_picture(token, artist_id):
     json_result = json.loads(result.content)
     return json_result["images"][0]["url"] 
 
-
+# gets the followers of the artist from the artist page
 def get_artist_followers(token, artist_id):
     url = f"https://api.spotify.com/v1/artists/{artist_id}"
     headers = get_auth_header(token)
