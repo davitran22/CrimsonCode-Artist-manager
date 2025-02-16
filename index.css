@@ -1,0 +1,33 @@
+/* For results.html */
+
+.heading /*Search for an artist*/
+{
+    font-family: bold;
+}
+
+label /* Enter artist name*/
+{
+    
+    
+    margin: 0;
+}
+
+
+.submit_button /* search button */
+{
+    
+    color: lightcoral;
+}
+
+
+
+#logo
+{
+    font-size: 30px;
+    font-weight: bold;
+    color: green;
+    text-align: center;
+    margin: 20px 0;
+    text-decoration: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}

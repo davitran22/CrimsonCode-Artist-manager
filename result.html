@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist Info</title>
+</head>
+<body>
+    <h1>Artist: {{ artist_name }}</h1>
+
+    {% if profile_picture %}
+        <img src="{{ profile_picture }}" alt="Artist Image" width="200">
+    {% endif %}
+
+    <p><strong>Followers:</strong> {{ artist_followers }}</p>
+
+    <h2>Top Songs:</h2>
+    <ol>
+        {% for song in top_songs %}
+            <li>{{ song["name"] }} - Popularity: {{ song["popularity"] }}</li>
+        {% endfor %}
+    </ol>
+
+    <a href="/">Search Another Artist</a>
+</body>
+</html>
