@@ -8,6 +8,7 @@ Recommends new songs every day accurately. Write a review on the song.
 # Table of Contents
 - [Preview](#preview)
 - [Tools](#tools)
+- [Acknowledgements](#acknowledgements)
 
 # Preview
 ![Artist Manager 1](https://github.com/user-attachments/assets/68542b09-d847-49a8-96d8-e2ae664dcb5c)
@@ -19,4 +20,8 @@ Recommends new songs every day accurately. Write a review on the song.
 - Python
 - HTML
 - CSS
+- [Spotify Web API](https://developer.spotify.com/documentation/web-api)
+
+# Acknowledgements
+- Thank you [https://developer.spotify.com/documentation/web-api](Spotify) for their api has real time data on a artists most popular song and their albums 
 
