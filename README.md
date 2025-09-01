@@ -16,7 +16,7 @@ Recommends new songs every day accurately. Write a review on the song.
 ![Artist manager 2](https://github.com/user-attachments/assets/6b92ac95-4793-4f7f-92d7-8d05b784b8d3)
 
 # Tools
-- Lask
+- Flask
 - Python
 - HTML
 - CSS
